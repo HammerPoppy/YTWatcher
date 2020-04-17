@@ -16,9 +16,8 @@ class MainActivity : AppCompatActivity(), YouTubePlayer.OnInitializedListener {
         setContentView(R.layout.activity_main)
 
         @Suppress("DEPRECATION")
-        val fragment = fragmentManager.findFragmentByTag("yt_player") as YouTubePlayerFragment
+        val fragment = fragmentManager.findFragmentById(R.id.yt_player_fragment) as YouTubePlayerFragment
         fragment.initialize(API_KEY, this)
-    }
 
     override fun onInitializationSuccess(
         p0: YouTubePlayer.Provider?,
