@@ -15,8 +15,8 @@ class MainActivity : AppCompatActivity(), YouTubePlayer.OnInitializedListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        @Suppress("CAST_NEVER_SUCCEEDS")
-        val fragment = supportFragmentManager.findFragmentById(R.id.yt_player_fragment) as YouTubePlayerFragment
+        @Suppress("DEPRECATION")
+        val fragment = fragmentManager.findFragmentByTag("yt_player") as YouTubePlayerFragment
         fragment.initialize(API_KEY, this)
     }
 
