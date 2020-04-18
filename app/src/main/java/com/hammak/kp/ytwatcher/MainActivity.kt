@@ -64,10 +64,10 @@ class MainActivity : AppCompatActivity() {
             )
         }
 
-        if (!result.nextPageToken.isNullOrEmpty())
-            loadData(result.nextPageToken)
-//        else
+        if (result.nextPageToken.isNullOrEmpty())
 //            launchFragment()
+        else
+            loadData(result.nextPageToken)
     }
 
     private fun onLoadDataError(message: String?) {
