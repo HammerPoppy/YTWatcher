@@ -1,10 +1,7 @@
 package com.hammak.kp.ytwatcher
 
-import YouTubePlayerOnInitializedListenerHandler
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.google.android.youtube.player.YouTubeInitializationResult
-import com.google.android.youtube.player.YouTubePlayer
 import com.google.android.youtube.player.YouTubePlayerFragment
 
 private const val PLAYLIST_ID = "PLZfhqd1-Hl3BdvYUJaB2eOJ1JoFchUeMv"
@@ -19,6 +16,8 @@ class MainActivity : AppCompatActivity() {
         @Suppress("DEPRECATION")
         val fragment =
             fragmentManager.findFragmentById(R.id.yt_player_fragment) as YouTubePlayerFragment
-        fragment.initialize(API_KEY, YouTubePlayerOnInitializedListenerHandler())
+        fragment.initialize(API_KEY,
+            YouTubePlayerOnInitializedListenerHandler()
+        )
     }
 }
