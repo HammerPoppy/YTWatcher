@@ -1,4 +1,4 @@
-package com.hammak.kp.ytwatcher
+package com.hammak.kp.ytwatcher.videolistfragment
 
 object VideoData {
 
