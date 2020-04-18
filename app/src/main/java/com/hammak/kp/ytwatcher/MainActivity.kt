@@ -7,6 +7,7 @@ import com.google.android.youtube.player.YouTubePlayerFragment
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
+import kotlinx.android.synthetic.main.activity_main.*
 
 private const val PLAYLIST_ID = "PLZfhqd1-Hl3BdvYUJaB2eOJ1JoFchUeMv"
 private const val API_KEY = "AIzaSyBKEc-HhscdHeUZ658_jhEzYiSEEgkRpQM"
@@ -61,8 +62,8 @@ class MainActivity : AppCompatActivity() {
 
         if (!result.nextPageToken.isNullOrEmpty())
             loadData(result.nextPageToken)
-        else
-            launchFragment()
+//        else
+//            launchFragment()
     }
 
     private fun onLoadDataError(message: String?) {
