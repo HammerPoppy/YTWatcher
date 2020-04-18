@@ -1,6 +1,7 @@
 package com.hammak.kp.ytwatcher
 
-import Root
+import com.hammak.kp.ytwatcher.model.Root
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.youtube.player.YouTubePlayerFragment
@@ -15,11 +16,11 @@ private const val API_KEY = "AIzaSyBKEc-HhscdHeUZ658_jhEzYiSEEgkRpQM"
 
 class MainActivity : AppCompatActivity() {
 
-    val apiServe by lazy {
+    private val apiServe by lazy {
         ApiService.create()
     }
 
-    var disposable: Disposable? = null
+    private var disposable: Disposable? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -71,6 +72,7 @@ class MainActivity : AppCompatActivity() {
             loadData(result.nextPageToken)
     }
 
+    @SuppressLint("SetTextI18n")
     private fun onLoadDataError(message: String?) {
 
         loadingTextView.text = "Fetching API data error 1.\nError message: \"$message\"."

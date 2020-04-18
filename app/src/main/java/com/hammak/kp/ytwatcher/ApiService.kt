@@ -1,6 +1,6 @@
 package com.hammak.kp.ytwatcher
 
-import Root
+import com.hammak.kp.ytwatcher.model.Root
 import io.reactivex.Observable
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory

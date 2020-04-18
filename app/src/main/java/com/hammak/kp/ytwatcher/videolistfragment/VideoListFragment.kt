@@ -13,7 +13,7 @@ import com.hammak.kp.ytwatcher.R
 
 
 /**
- * A fragment representing a list of Items.
+ * A fragment representing a list of com.hammak.kp.ytwatcher.model.Items.
  * Activities containing this fragment MUST implement the
  * [VideoListFragment.OnListFragmentInteractionListener] interface.
  */
@@ -59,7 +59,7 @@ class VideoListFragment : Fragment() {
         if (context is OnListFragmentInteractionListener) {
             listener = context
         } else {
-            throw RuntimeException(context.toString() + " must implement OnListFragmentInteractionListener")
+            throw RuntimeException("$context must implement OnListFragmentInteractionListener")
         }
     }
 

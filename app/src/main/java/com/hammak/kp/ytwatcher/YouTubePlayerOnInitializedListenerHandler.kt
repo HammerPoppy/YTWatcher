@@ -10,9 +10,7 @@ class YouTubePlayerOnInitializedListenerHandler : YouTubePlayer.OnInitializedLis
         p1: YouTubePlayer?,
         p2: Boolean
     ) {
-        if (p1 != null) {
-            p1.cueVideo("Awpj7bnyWYk")
-        }
+        p1?.cueVideo("Awpj7bnyWYk")
     }
 
     override fun onInitializationFailure(
