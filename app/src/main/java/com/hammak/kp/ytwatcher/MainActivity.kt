@@ -25,17 +25,17 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val ytPlayerFragment = YouTubePlayerFragment()
-        fragmentManager.beginTransaction()
-            .add(R.id.root, ytPlayerFragment)
-            .show(ytPlayerFragment)
-            .commit()
+//        fragmentManager.beginTransaction()
+//            .add(R.id.root, ytPlayerFragment)
+//            .show(ytPlayerFragment)
+//            .commit()
 
         loadData("")
 
-        ytPlayerFragment.initialize(
-            API_KEY,
-            YouTubePlayerOnInitializedListenerHandler()
-        )
+//        ytPlayerFragment.initialize(
+//            API_KEY,
+//            YouTubePlayerOnInitializedListenerHandler()
+//        )
     }
 
     private fun loadData(nextPageToken: String) {
