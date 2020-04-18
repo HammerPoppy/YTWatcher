@@ -24,12 +24,16 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        val ytPlayerFragment = YouTubePlayerFragment()
+        fragmentManager.beginTransaction()
+            .add(R.id.root, ytPlayerFragment)
+            .show(ytPlayerFragment)
+            .commit()
+
         loadData("")
 
-        @Suppress("DEPRECATION")
-        val fragment =
-            fragmentManager.findFragmentById(R.id.yt_player_fragment) as YouTubePlayerFragment
-        fragment.initialize(API_KEY,
+        ytPlayerFragment.initialize(
+            API_KEY,
             YouTubePlayerOnInitializedListenerHandler()
         )
     }
