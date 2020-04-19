@@ -3,7 +3,9 @@ package com.hammak.kp.ytwatcher
 import com.hammak.kp.ytwatcher.model.Root
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import com.google.android.youtube.player.YouTubePlayerFragment
 import com.hammak.kp.ytwatcher.videolistfragment.VideoData
 import com.hammak.kp.ytwatcher.videolistfragment.VideoListFragment
@@ -28,7 +30,7 @@ class MainActivity : AppCompatActivity(), OnListFragmentInteractionListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val ytPlayerFragment = YouTubePlayerFragment()
+//        val ytPlayerFragment = YouTubePlayerFragment()
 //        fragmentManager.beginTransaction()
 //            .add(R.id.root, ytPlayerFragment)
 //            .show(ytPlayerFragment)
@@ -40,6 +42,15 @@ class MainActivity : AppCompatActivity(), OnListFragmentInteractionListener {
 //            API_KEY,
 //            YouTubePlayerOnInitializedListenerHandler()
 //        )
+    }
+
+    private fun showList() {
+        loadingTextView.visibility = View.INVISIBLE
+        val f = VideoListFragment()
+        supportFragmentManager.beginTransaction()
+            .add(R.id.root, f as Fragment)
+            .show(f)
+            .commit()
     }
 
     private fun loadData(nextPageToken: String) {
@@ -68,9 +79,9 @@ class MainActivity : AppCompatActivity(), OnListFragmentInteractionListener {
             )
         }
 
-        if (result.nextPageToken.isNullOrEmpty())
-//            launchFragment()
-        else
+        if (result.nextPageToken.isNullOrEmpty()) {
+            showList()
+        } else
             loadData(result.nextPageToken)
     }
 
