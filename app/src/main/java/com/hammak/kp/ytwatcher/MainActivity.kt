@@ -6,6 +6,8 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.youtube.player.YouTubePlayerFragment
 import com.hammak.kp.ytwatcher.videolistfragment.VideoData
+import com.hammak.kp.ytwatcher.videolistfragment.VideoListFragment
+import com.hammak.kp.ytwatcher.videolistfragment.VideoListFragment.*
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
@@ -14,7 +16,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 private const val PLAYLIST_ID = "PLZfhqd1-Hl3BdvYUJaB2eOJ1JoFchUeMv"
 private const val API_KEY = "AIzaSyBKEc-HhscdHeUZ658_jhEzYiSEEgkRpQM"
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), OnListFragmentInteractionListener {
 
     private val apiServe by lazy {
         ApiService.create()
@@ -81,5 +83,9 @@ class MainActivity : AppCompatActivity() {
     override fun onPause() {
         super.onPause()
         disposable?.dispose()
+    }
+
+    override fun onListFragmentInteraction(item: VideoData.Video?) {
+        TODO("Not yet implemented")
     }
 }
