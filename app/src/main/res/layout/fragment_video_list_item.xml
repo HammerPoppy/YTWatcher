@@ -21,7 +21,7 @@
 
     <TextView
         android:id="@+id/videoTitle"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
         android:layout_marginTop="16dp"
@@ -34,11 +34,4 @@
         app:layout_constraintStart_toEndOf="@+id/thumbnail"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Возрождение Crysis, продажи Resident Evil 3, Half-Life: Alyx без VR, ремейк Resident Evil 4" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="20dp" />
 </LinearLayout>

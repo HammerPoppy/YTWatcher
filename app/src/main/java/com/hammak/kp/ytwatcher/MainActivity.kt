@@ -3,9 +3,13 @@ package com.hammak.kp.ytwatcher
 import com.hammak.kp.ytwatcher.model.Root
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import com.google.android.youtube.player.YouTubePlayerFragment
 import com.hammak.kp.ytwatcher.videolistfragment.VideoData
+import com.hammak.kp.ytwatcher.videolistfragment.VideoListFragment
+import com.hammak.kp.ytwatcher.videolistfragment.VideoListFragment.*
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
@@ -14,7 +18,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 private const val PLAYLIST_ID = "PLZfhqd1-Hl3BdvYUJaB2eOJ1JoFchUeMv"
 private const val API_KEY = "AIzaSyBKEc-HhscdHeUZ658_jhEzYiSEEgkRpQM"
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), OnListFragmentInteractionListener {
 
     private val apiServe by lazy {
         ApiService.create()
@@ -26,7 +30,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val ytPlayerFragment = YouTubePlayerFragment()
+//        val ytPlayerFragment = YouTubePlayerFragment()
 //        fragmentManager.beginTransaction()
 //            .add(R.id.root, ytPlayerFragment)
 //            .show(ytPlayerFragment)
@@ -38,6 +42,15 @@ class MainActivity : AppCompatActivity() {
 //            API_KEY,
 //            YouTubePlayerOnInitializedListenerHandler()
 //        )
+    }
+
+    private fun showList() {
+        loadingTextView.visibility = View.INVISIBLE
+        val f = VideoListFragment()
+        supportFragmentManager.beginTransaction()
+            .add(R.id.root, f as Fragment)
+            .show(f)
+            .commit()
     }
 
     private fun loadData(nextPageToken: String) {
@@ -66,9 +79,9 @@ class MainActivity : AppCompatActivity() {
             )
         }
 
-        if (result.nextPageToken.isNullOrEmpty())
-//            launchFragment()
-        else
+        if (result.nextPageToken.isNullOrEmpty()) {
+            showList()
+        } else
             loadData(result.nextPageToken)
     }
 
@@ -81,5 +94,9 @@ class MainActivity : AppCompatActivity() {
     override fun onPause() {
         super.onPause()
         disposable?.dispose()
+    }
+
+    override fun onListFragmentInteraction(item: VideoData.Video?) {
+        TODO("Not yet implemented")
     }
 }
