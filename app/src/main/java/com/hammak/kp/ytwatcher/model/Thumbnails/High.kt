@@ -1,7 +1,3 @@
-@file:Suppress("SpellCheckingInspection", "SpellCheckingInspection")
-
-package com.hammak.kp.ytwatcher.model
-
 import com.google.gson.annotations.SerializedName
 
 /*
@@ -16,9 +12,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 For support, please feel free to contact me at https://www.linkedin.com/in/syedabsar */
 
 
-data class High(
+data class High (
 
-    @SerializedName("url") val url: String,
-    @SerializedName("width") val width: Int,
-    @SerializedName("height") val height: Int
+    @SerializedName("url") val url : String,
+    @SerializedName("width") val width : Int,
+    @SerializedName("height") val height : Int
 )

@@ -2,13 +2,13 @@ package com.hammak.kp.ytwatcher.videolistfragment
 
 import android.content.Context
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import com.hammak.kp.ytwatcher.R
 
 
@@ -80,19 +80,19 @@ class VideoListFragment : Fragment() {
      * for more information.
      */
     interface OnListFragmentInteractionListener {
-        fun onListFragmentInteraction(item: VideoData.Video?)
+        fun onListFragmentInteraction(item: VideoData.Video)
     }
 
     companion object {
 
         const val ARG_COLUMN_COUNT = "column-count"
 
-        @JvmStatic
-        fun newInstance(columnCount: Int) =
-            VideoListFragment().apply {
-                arguments = Bundle().apply {
-                    putInt(ARG_COLUMN_COUNT, columnCount)
-                }
-            }
+//        @JvmStatic
+//        fun newInstance(columnCount: Int) =
+//            VideoListFragment().apply {
+//                arguments = Bundle().apply {
+//                    putInt(ARG_COLUMN_COUNT, columnCount)
+//                }
+//            }
     }
 }

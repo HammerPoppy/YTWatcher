@@ -1,5 +1,3 @@
-package com.hammak.kp.ytwatcher.model
-
 import com.google.gson.annotations.SerializedName
 
 /*
