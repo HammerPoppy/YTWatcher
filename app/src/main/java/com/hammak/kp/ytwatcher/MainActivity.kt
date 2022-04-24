@@ -23,7 +23,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 //private const val PLAYLIST_ID = "PLZfhqd1-Hl3BdvYUJaB2eOJ1JoFchUeMv" // SG
 //private const val PLAYLIST_ID = "PLb48Ubr_9WeXp7jzHVI4B9w00xX-6M1Ex" // Karamyshev
 private const val PLAYLIST_ID = "PL8Zztx2W2NQkYZPbVa3e7ZX-T7SFYQP_r" // Absurd
-private const val API_KEY = "AIzaSyBKEc-HhscdHeUZ658_jhEzYiSEEgkRpQM"
+private const val API_KEY = 
 
 class MainActivity : AppCompatActivity(), OnListFragmentInteractionListener {
 
